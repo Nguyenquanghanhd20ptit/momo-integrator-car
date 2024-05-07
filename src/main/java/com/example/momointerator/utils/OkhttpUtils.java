@@ -58,7 +58,7 @@ public class OkhttpUtils {
                                                    String jsonBody){
         try{
             Headers headers = Headers.of(mapHeader);
-            MediaType mediaType = MediaType.parse("application/json; charset=utf-8");
+            MediaType mediaType = MediaType.parse("application/json;charset=utf-8");
             RequestBody requestBody = jsonBody == null ? RequestBody.create(mediaType,"") : RequestBody.create(mediaType,jsonBody);
             Request request = new Request.Builder().url(url)
                     .headers(headers)
@@ -109,7 +109,7 @@ public class OkhttpUtils {
                 return new ResponseEntity<>(null, HttpStatus.valueOf(response.code()));
             }
             else {
-                return new ResponseEntity<>(response.body().toString(),HttpStatus.valueOf(response.code()));
+                return new ResponseEntity<>(response.body().string(),HttpStatus.valueOf(response.code()));
             }
         }catch (Exception e){
             return new ResponseEntity<>(null,HttpStatus.INTERNAL_SERVER_ERROR);

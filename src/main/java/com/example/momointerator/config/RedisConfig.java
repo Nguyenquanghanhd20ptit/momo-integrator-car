@@ -32,7 +32,7 @@ public class RedisConfig {
         LettuceClientConfiguration configuration = LettuceClientConfiguration
                 .builder().clientOptions(clientOptions).build();
         RedisStandaloneConfiguration redisStandaloneConfiguration = new RedisStandaloneConfiguration
-                (resourceProperties.getRedisHost(),resourceProperties.getRedisPost());
+                (resourceProperties.getRedisHost(),resourceProperties.getRedisPort());
         redisStandaloneConfiguration.setPassword(resourceProperties.getRedisPassword());
         final LettuceConnectionFactory lettuceConnectionFactory = new LettuceConnectionFactory
                 (redisStandaloneConfiguration,configuration);

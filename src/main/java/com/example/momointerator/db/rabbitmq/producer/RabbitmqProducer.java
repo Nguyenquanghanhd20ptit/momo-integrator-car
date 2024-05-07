@@ -1,14 +1,14 @@
-package com.example.momointerator.utils;
+package com.example.momointerator.db.rabbitmq.producer;
 
 import com.example.momointerator.config.ResourceProperties;
-import org.springframework.amqp.core.AmqpTemplate;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class RabbitmqUtils {
+public class RabbitmqProducer {
     @Autowired
-    private AmqpTemplate amqpTemplate;
+    private RabbitTemplate amqpTemplate;
     @Autowired
     private ResourceProperties resourceProperties;
 

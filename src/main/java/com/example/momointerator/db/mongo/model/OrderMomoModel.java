@@ -24,6 +24,8 @@ public class OrderMomoModel {
     private OrderSendToMomo sendInfo;
     @Field("receive_info")
     private ReceiveInfoMomo receiveInfo;
+    @Field("status")
+    private Integer status;
     @Field("created_at")
     private Date createdAt;
 }

@@ -25,8 +25,8 @@ public class ResourceProperties {
     private final String rabbitmqDirectExchange;
     private final String rabbitmqDirectRoutingStatusOrder;
     private final String rabbitmqDirectRoutingTransaction;
+    private final String rabbitmqDirectQueueStatusOrder;
     private final String carModuleUrl;
-    private final String transactionId;
 
     public ResourceProperties(@Value("${api.timeout}") int timeout,
                               @Value("${spring.redis.timeout}") int redisTimeout,
@@ -47,8 +47,8 @@ public class ResourceProperties {
                               @Value("${rabbitmq.direct-exchange}") String rabbitmqDirectExchange,
                               @Value("${rabbitmq.direct-routing.status-order}") String rabbitmqDirectRoutingStatusOrder,
                               @Value("${rabbitmq.direct-routing.transaction}") String rabbitmqDirectRoutingTransaction,
-                              @Value("${car.module.url}") String carModuleUrl,
-                              @Value("${transaction.id}") String transactionId) {
+                             @Value("${rabbitmq.direct-queue.status-order}") String rabbitmqDirectQueueStatusOrder,
+                              @Value("${car.module.url}") String carModuleUrl){
         this.timeout = timeout;
         this.redisTimeout = redisTimeout;
         this.redisHost = redisHost;
@@ -68,7 +68,7 @@ public class ResourceProperties {
         this.rabbitmqDirectExchange = rabbitmqDirectExchange;
         this.rabbitmqDirectRoutingStatusOrder = rabbitmqDirectRoutingStatusOrder;
         this.rabbitmqDirectRoutingTransaction = rabbitmqDirectRoutingTransaction;
+        this.rabbitmqDirectQueueStatusOrder = rabbitmqDirectQueueStatusOrder;
         this.carModuleUrl = carModuleUrl;
-        this.transactionId = transactionId;
     }
 }

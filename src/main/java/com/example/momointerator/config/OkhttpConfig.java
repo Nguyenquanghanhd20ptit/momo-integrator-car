@@ -15,10 +15,6 @@ public class OkhttpConfig {
     @Bean
     public OkHttpClient okHttpClientInit(){
         return new OkHttpClient.Builder()
-                .connectTimeout(resourceProperties.getTimeout(), TimeUnit.MICROSECONDS)
-                .readTimeout(resourceProperties.getTimeout(),TimeUnit.MICROSECONDS)
-                .retryOnConnectionFailure(false)
-                .connectionPool(new ConnectionPool(5,5,TimeUnit.SECONDS))
                 .build();
     }
 }

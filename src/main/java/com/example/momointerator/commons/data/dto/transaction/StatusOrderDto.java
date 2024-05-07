@@ -7,6 +7,6 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 public class StatusOrderDto {
     private String orderId;
+    private Integer transactionId;
     private Integer statusCode;
-    private String transactionType;
 }
